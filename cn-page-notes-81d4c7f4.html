@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完美对战平台 · 资料索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, 'Noto Sans SC', sans-serif;
+            background-color: #f8f6f1;
+            color: #2c2c2c;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* nav */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e6e0d4;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .nav-brand {
+            font-weight: 500;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            color: #3b3a36;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5b5a55;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b7a88c;
+            color: #2f2e2a;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 0 1.8rem;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3.2rem;
+            padding: 1.2rem 0 1.8rem 0;
+            border-bottom: 1px dashed #ddd6ca;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #2a2925;
+            letter-spacing: 1px;
+            margin-bottom: 0.7rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #6b685f;
+            max-width: 70%;
+        }
+
+        @media (max-width: 640px) {
+            .hero .sub {
+                max-width: 100%;
+            }
+            .nav-links {
+                gap: 1rem;
+                margin-top: 0.4rem;
+            }
+        }
+
+        /* 通用卡片 / 引用块 */
+        .quote-card {
+            background: #f2efe9;
+            border-left: 4px solid #c0b09a;
+            padding: 1.2rem 1.6rem;
+            margin: 1.8rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.96rem;
+            color: #3d3b36;
+        }
+
+        .quote-card strong {
+            color: #4e4a42;
+        }
+
+        .info-box {
+            background: #edeae2;
+            padding: 1rem 1.4rem;
+            border-radius: 8px;
+            margin: 1.6rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .info-box p {
+            margin: 0.2rem 0;
+        }
+
+        /* 场景模块三列（flex） */
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .scene-item {
+            flex: 1 1 250px;
+            background: #ffffff;
+            padding: 1.4rem 1.2rem 1.6rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #ece6dd;
+        }
+
+        .scene-item h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            color: #3f3c36;
+            border-bottom: 1px solid #e4ddd0;
+            padding-bottom: 0.3rem;
+        }
+
+        .scene-item p {
+            font-size: 0.94rem;
+            color: #4c4a44;
+        }
+
+        .scene-item .tag {
+            display: inline-block;
+            background: #e6dfd3;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #4f4a41;
+            margin-top: 0.6rem;
+        }
+
+        /* 常见说明 (折叠简洁) */
+        .faq-mini {
+            margin: 2.8rem 0 1.6rem 0;
+        }
+
+        .faq-mini details {
+            background: #f7f4ef;
+            border: 1px solid #e2d9cc;
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #3e3b35;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini details p {
+            margin: 0.5rem 0 0.2rem 0;
+            padding-left: 0.6rem;
+            color: #4f4c45;
+        }
+
+        /* 链接嵌入样式 */
+        .inline-link {
+            color: #6f644f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cfc4b2;
+            font-weight: 450;
+        }
+
+        .inline-link:hover {
+            color: #3d372a;
+            text-decoration-color: #a08d73;
+        }
+
+        /* 页脚 */
+        footer {
+            margin-top: 3.5rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid #e1d9cd;
+            font-size: 0.85rem;
+            color: #7b766b;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e7e0d4;
+            margin: 1.8rem 0;
+        }
+
+        .note {
+            background: #f5f2eb;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #686358;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span class="nav-brand">📋 资料·索引</span>
+    <div class="nav-links">
+        <a href="#intro">综述</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- hero 简短切入 -->
+    <div class="hero">
+        <h1>完美对战平台 · 整理手记</h1>
+        <div class="sub">一份从资料汇集与信息梳理角度展开的轻量导航，侧重客观介绍与场景分类。</div>
+    </div>
+
+    <!-- 核心介绍（嵌入链接） -->
+    <section id="intro">
+        <p style="margin-bottom: 0.8rem;">
+            在众多游戏服务工具中，<a href="https://cn-page-wanmei.com" class="inline-link">完美对战平台</a> 作为一款专注于匹配与对战管理的产品，逐渐被玩家用来整理自己的比赛记录、好友组队以及战绩查阅。本文档试图从资料索引的视角，梳理平台内几个常见的使用方向，方便新用户快速建立认知。
+        </p>
+        <div class="quote-card">
+            <strong>提示：</strong> 以下信息均基于公开资料与常见功能介绍整理，不构成任何承诺或保证。具体功能请以平台实际表现为准。
+        </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+        <h2 style="font-weight: 400; font-size: 1.3rem; margin-bottom: 0.2rem; color: #36332e;">常见使用场景</h2>
+        <div class="scenes">
+            <div class="scene-item">
+                <h3>📊 战绩归档</h3>
+                <p>个人对局数据、历史战绩、常用英雄/角色统计，适合玩家回顾近期表现。部分数据支持导出为截图或简短报告，便于自己留存。</p>
+                <span class="tag">数据整理</span>
+            </div>
+            <div class="scene-item">
+                <h3>👥 组队与匹配</h3>
+                <p>通过平台内好友列表或临时房间，快速发起匹配或自定义练习。适合固定车队、训练赛或娱乐局。房间设置包含基本规则选项。</p>
+                <span class="tag">组队工具</span>
+            </div>
+            <div class="scene-item">
+                <h3>📋 赛事信息聚合</h3>
+                <p>部分社区赛事或第三方活动会利用平台进行报名、赛程同步与结果公示。可当作轻量赛事信息汇总页面来浏览。</p>
+                <span class="tag">赛事索引</span>
+            </div>
+        </div>
+        <p style="font-size: 0.9rem; color: #706b61; margin-top: 0.2rem;">以上三个方向彼此独立，但均可在 <a href="https://cn-page-wanmei.com" class="inline-link">完美对战平台</a> 内找到对应入口（具体菜单名称可能随版本调整）。</p>
+    </section>
+
+    <!-- 常见说明（折叠形式） -->
+    <section id="faq" class="faq-mini">
+        <h2 style="font-weight: 400; font-size: 1.25rem; margin-bottom: 0.8rem; color: #3b3832;">常见简要说明</h2>
+        <details>
+            <summary>平台是否需要注册？</summary>
+            <p>通常使用主流游戏账号或手机号即可登录，具体注册方式以平台页面指引为准。部分功能可能需要绑定游戏角色。</p>
+        </details>
+        <details>
+            <summary>战绩数据更新频率？</summary>
+            <p>对局结束后一般会在数分钟内同步，偶尔因服务器维护稍有延迟。建议以平台内实际显示时间为参考。</p>
+        </details>
+        <details>
+            <summary>是否支持跨区组队？</summary>
+            <p>主要依据游戏本身区服设定，平台本身不改变游戏原有的区服限制。组队前可确认队友所在大区。</p>
+        </details>
+        <div class="info-box">
+            <p>💡 如果遇到不确定的功能，不妨先在平台帮助文档或社区内搜索关键词，很多细节已有玩家整理过。</p>
+        </div>
+    </section>
+
+    <!-- 额外引用块：关于索引思路 -->
+    <div class="quote-card" style="margin: 2rem 0 1.2rem 0;">
+        <strong>索引视角：</strong> 本页不试图覆盖所有功能，而是把常见信息归类为战绩、组队、赛事三个抽屉，方便随手查阅。正如整理文件夹一样，给每个用途一个格子。
+    </div>
+
+    <hr>
+
+    <p style="font-size: 0.92rem; color: #625e55;">
+        📎 如果你正在寻找一个集中查看对战资料的地方，<a href="https://cn-page-wanmei.com" class="inline-link">完美对战平台</a> 也许值得一试。保持资料简洁，让信息自己说话。
+    </p>
+
+    <footer>
+        <span class="note">非官方资料页 · 仅作信息整理</span> &nbsp;·&nbsp; 内容仅供参考
+    </footer>
+</div>
+
+</body>
+</html>
